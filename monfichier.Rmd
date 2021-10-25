@@ -1,6 +1,5 @@
 ---
 title: "Mon fichier"
-date: `r format(Sys.time(), "%d %B, %Y")`
 author: Gilles
 output: pdf_document
 ---
