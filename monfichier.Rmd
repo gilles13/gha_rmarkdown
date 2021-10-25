@@ -1,0 +1,26 @@
+---
+title: "Mon fichier"
+date: `r format(Sys.time(), "%d %B, %Y")`
+author: Gilles
+output: pdf_document
+---
+
+# Partie 1
+
+Ceci sera la partie 1
+
+## Section 1
+
+```{r test, eval=TRUE}
+df <- data.frame(a=1:10,
+								 b=101:110,
+								 c=letters[1:10])
+
+df
+```
+
+Un graphique
+
+```{r plot, eval=TRUE}
+plot(df)
+```
