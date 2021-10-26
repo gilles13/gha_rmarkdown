@@ -1,8 +1,27 @@
 ---
 title: "Mon fichier"
 author: Gilles
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: pdf_document
+bibliography: biblio.bib
 ---
+
+```{r setup, include=FALSE}
+options(scipen = 999)
+knitr::opts_chunk$set(echo = TRUE,
+                      # fig.align='center',
+                      # fig.pos='H',
+                      # out.width = "90%",
+                      # out.height="90%",
+                      warning=FALSE,
+                      message=FALSE)
+```
+
+```{r source1, eval=TRUE}
+source(file = "./source01.R"),
+       encoding = "utf-8",
+       local = TRUE)
+```
 
 # Partie 1
 
@@ -18,8 +37,35 @@ df <- data.frame(a=1:10,
 df
 ```
 
+## Section 2
+
 Un graphique
 
 ```{r plot, eval=TRUE}
 plot(df)
 ```
+
+\clearpage
+
+# Partie 2
+
+```{r mtcars, echo=FALSE}
+knitr::kable(mtcars[1:5, 1:5], caption = "The mtcars data.")
+```
+
+Utilisation de la variable initialisée dans `source1.R`
+
+```{r testsource1, echo=FALSE}
+barplot(height = abc$b, names.arg = abc$c)
+```
+
+
+\clearpage
+
+# Partie 3
+
+Test de citation [@knuth_literate_prog]
+
+\clearpage
+
+# Bibliographie
