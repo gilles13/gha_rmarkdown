@@ -1,12 +1,11 @@
 ---
-
 title: "Mon fichier"
 author: Gilles
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   pdf_document:
     toc: true
-		toc_depth: 3
+    toc_depth: 3
 bibliography: biblio.bib
 ---
 
@@ -23,15 +22,18 @@ knitr::opts_chunk$set(echo = TRUE,
 
 \clearpage
 
+# Partie 1
+
+Ceci sera la partie 1
+
+Sourcer le fichier 1
+
 ```{r source1, eval=TRUE}
 source(file = "./source1.R",
        encoding = "utf-8",
        local = TRUE)
 ```
 
-# Partie 1
-
-Ceci sera la partie 1
 
 ## Section 1
 
@@ -55,7 +57,7 @@ plot(df)
 
 # Partie 2
 
-```{r mtcars, echo=FALSE}
+```{r mtcars}
 knitr::kable(mtcars[1:5, 1:5], caption = "The mtcars data.")
 ```
 
