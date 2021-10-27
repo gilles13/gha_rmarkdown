@@ -1,8 +1,12 @@
 ---
+
 title: "Mon fichier"
 author: Gilles
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: pdf_document
+output:
+  pdf_document:
+    toc: true
+		toc_depth: 3
 bibliography: biblio.bib
 ---
 
@@ -16,6 +20,8 @@ knitr::opts_chunk$set(echo = TRUE,
                       warning=FALSE,
                       message=FALSE)
 ```
+
+\clearpage
 
 ```{r source1, eval=TRUE}
 source(file = "./source1.R",
@@ -31,8 +37,8 @@ Ceci sera la partie 1
 
 ```{r test, eval=TRUE}
 df <- data.frame(a=1:10,
-								 b=101:110,
-								 c=letters[1:10])
+                 b=101:110,
+                 c=letters[1:10])
 
 df
 ```
@@ -55,16 +61,24 @@ knitr::kable(mtcars[1:5, 1:5], caption = "The mtcars data.")
 
 Utilisation de la variable initialisée dans `source1.R`
 
-```{r testsource1, echo=FALSE}
+```{r testsource1, echo=TRUE}
 barplot(height = abc$b, names.arg = abc$c)
 ```
-
 
 \clearpage
 
 # Partie 3
 
 Test de citation [@knuth_literate_prog]
+
+\clearpage
+
+# Partie 4
+
+## Section 1
+## Section 2
+## Section 3
+## Section 4
 
 \clearpage
 
